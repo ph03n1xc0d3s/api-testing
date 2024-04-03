@@ -31,15 +31,11 @@ class CronJob extends Command
     {
         $existingData = User::all();
 
-        // Loop through each record and replicate
         foreach ($existingData as $data) {
-            // Create a new record and save
             $newData = new User();
-            $newData->name = $data->name; // Repeat for all columns
+            $newData->name = $data->name; 
             $newData->email = $data->email;
             $newData->age = $data->age;
-
-            // Repeat for all columns
 
             $newData->save();
         }
